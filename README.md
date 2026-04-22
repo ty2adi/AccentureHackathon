@@ -57,5 +57,4 @@ This repo contains both **Production Pipelines** for the full 988-row dataset an
 
 ---
 
-## ⚖️ License
-Developed for the Databricks & Accenture IDP Agent Hackathon.
+
