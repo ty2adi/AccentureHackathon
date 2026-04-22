@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+.env
+Temp/
+Data/*.json
+Data/medical_intelligence_db/

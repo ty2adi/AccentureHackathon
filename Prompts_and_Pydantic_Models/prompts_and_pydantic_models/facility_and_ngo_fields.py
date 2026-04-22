@@ -14,6 +14,12 @@ Rules (hard):
 - For official website, only include the domain name, not the full URL. Note that it must correspond to the organization's official website or else it should not be included.
 - The official phone number must be the organization's primary official contact number. If it is not present, don't list it here.
 
+**Name Extraction Rules (CRITICAL):**
+- The "name" field must contain ONLY the official facility name — no street addresses, no city names, no GPS coordinates.
+- If the raw input looks like "109/No 1 Bekwai Rd (Near Mexico Hotel) Takoradi, Ghana", that is an ADDRESS, not a name. Set name to "Unknown" and parse the rest into address fields.
+- If the raw input is "St. Jude Hospital, 42 Oxford St, Osu, Accra", extract ONLY "St. Jude Hospital" as the name.
+- When in doubt, if a string contains road names (Rd, St, Ave, Hwy), building numbers, or directional phrases (Near, Opposite, Behind), it is an address — strip it from the name.
+
 **Address Parsing Rules:**
 - ALWAYS parse comma-separated location strings into separate fields (city, state/region, country).
 - address_line1/line2/line3 are for STREET addresses only, NOT for city/state/country.

@@ -1,20 +1,24 @@
 # ==========================================
 # DATABRICKS ACCENTURE CHALLENGE: DEPENDENCIES
 # ==========================================
-# To install all dependencies, run the following command in your terminal:
 # pip install -r requirements.txt
 
 # --- AI Framework & Models ---
 langchain-core              # Core framework for LLM operations
-langchain-google-genai      # Google Gemini's native API integration
+langchain-openai            # OpenAI's native API integration
 langgraph                   # Used for routing our multi-agent RAG reasoning loops
+openai                      # Native OpenAI client
+tenacity                    # Robust retries with exponential backoff
 
 # --- Data Validation & Schemas ---
-pydantic>=2.0.0             # Strictly enforces the JSON extraction shapes for Databricks Rules
+pydantic>=2.0.0             # Strictly enforces JSON extraction shapes
 
 # --- Data Processing & File I/O ---
-pandas                      # Loading, analyzing, and cleaning the massive CSV dataset
-pypdf                       # Unpacking medical documents and PDFs
+pandas                      # Loading and cleaning CSV data
+pypdf                       # Unpacking clinical PDFs
+lancedb                     # Our high-performance Vector Database
+pyarrow                     # Required by LanceDB
+tqdm                        # Progress bars
 
 # --- Security & Environment Variables ---
-python-dotenv               # Secretly loads the GEMINI_API_KEY from the .env file so it never goes into GitHub!
+python-dotenv               # Secretly loads the open_ai_api_key from .env
